@@ -83,19 +83,6 @@ logistics_dbms/
     └── package.json
 ```
 
-## 🔧 Database Configuration
-
-### Environment Variables (.env)
-```
-DB_USER=postgres
-DB_PASSWORD=12345
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=logistics_db
-PORT=5000
-JWT_SECRET=supersecretkey123
-```
-
 ### Database Schema
 
 **Users Table** (for authentication)
@@ -168,59 +155,14 @@ JWT_SECRET=supersecretkey123
 - Floating gradient orbs on login
 - Smooth hover effects
 
-## 🚦 Getting Started
-
-### Prerequisites
-- Node.js installed
-- PostgreSQL installed and running
-- Database `logistics_db` created
-
-### Installation & Running
-
-1. **Initialize Database**
-   ```bash
-   cd backend
-   node initDb.js
-   ```
-
-2. **Start Backend Server**
-   ```bash
-   cd backend
-   npm start
-   ```
-   Server runs on: http://localhost:5000
-
-3. **Start Frontend**
-   ```bash
-   cd frontend
-   npm run dev
-   ```
-   App runs on: http://localhost:5174
-
-### Troubleshooting Port Issues
-
-If the frontend doesn't load on port 5174 or opens on a different port:
-
-1. **Stop all Node.js processes:**
-   ```bash
-   # Windows PowerShell
-   Stop-Process -Name "node" -Force
-   
-   # Or use the cleanup script
-   .\cleanup-ports.ps1
-   ```
-
-2. **Restart the servers** following steps 2 and 3 above
-
-The Vite configuration has been set to use **port 5174** by default. If this port is busy, it will automatically try the next available port.
 
 ## 👤 Default Users
 
 | Username | Password    | Role    |
 |----------|-------------|---------|
-| admin    | admin123    | admin   |
-| manager  | manager123  | manager |
-| driver   | driver123   | driver  |
+| admin    | ********    | admin   |
+| manager  | **********  | manager |
+| driver   | *********   | driver  |
 
 ## 🎯 Usage
 
@@ -253,92 +195,3 @@ The Vite configuration has been set to use **port 5174** by default. If this por
 - Items linked to Warehouses and Suppliers
 - Drivers linked to Vehicles
 - Dropdown selects for foreign keys
-
-## 📝 API Endpoints
-
-### Authentication
-- POST `/api/auth/login` - Login user
-
-### Suppliers
-- GET `/api/suppliers` - Get all suppliers
-- POST `/api/suppliers` - Create supplier
-- PUT `/api/suppliers/:id` - Update supplier
-- DELETE `/api/suppliers/:id` - Delete supplier
-
-### Warehouses
-- GET `/api/warehouses` - Get all warehouses
-- POST `/api/warehouses` - Create warehouse
-- PUT `/api/warehouses/:id` - Update warehouse
-- DELETE `/api/warehouses/:id` - Delete warehouse
-
-### Customers
-- GET `/api/customers` - Get all customers
-- POST `/api/customers` - Create customer
-- PUT `/api/customers/:id` - Update customer
-- DELETE `/api/customers/:id` - Delete customer
-
-### Items
-- GET `/api/items` - Get all items
-- POST `/api/items` - Create item
-- PUT `/api/items/:id` - Update item
-- DELETE `/api/items/:id` - Delete item
-
-### Vehicles
-- GET `/api/vehicles` - Get all vehicles
-- POST `/api/vehicles` - Create vehicle
-- PUT `/api/vehicles/:id` - Update vehicle
-- DELETE `/api/vehicles/:id` - Delete vehicle
-
-### Drivers
-- GET `/api/drivers` - Get all drivers
-- POST `/api/drivers` - Create driver
-- PUT `/api/drivers/:id` - Update driver
-- DELETE `/api/drivers/:id` - Delete driver
-
-## 🎨 CSS Architecture
-
-### Design Tokens
-- CSS custom properties for colors, spacing, typography
-- Consistent border radius and shadows
-- Transition timing functions
-
-### Component Styles
-- Modular CSS files per component
-- Shared utility classes
-- Responsive breakpoints
-
-### Animations
-- @keyframes for entrance animations
-- Transition properties for interactions
-- Hover and focus states
-
-## 🔒 Security Notes
-
-**⚠️ Important for Production:**
-- Change JWT_SECRET to a strong random string
-- Use bcrypt for password hashing (currently plain text)
-- Add input validation and sanitization
-- Implement rate limiting
-- Use HTTPS
-- Add CSRF protection
-- Implement proper error handling
-
-## 📱 Responsive Design
-
-- Desktop-first approach
-- Breakpoint at 1024px for tablet
-- Breakpoint at 768px for mobile
-- Sidebar collapses on smaller screens
-- Tables scroll horizontally on mobile
-
-## 🎉 Success!
-
-Your logistics management system is now fully functional with:
-✅ Beautiful, modern UI with animations
-✅ Role-based authentication
-✅ Complete CRUD operations for all entities
-✅ PostgreSQL database integration
-✅ Responsive design
-✅ Professional design system
-
-Enjoy your new logistics management system! 🚀
